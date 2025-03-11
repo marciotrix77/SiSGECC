@@ -103,6 +103,39 @@ button:hover {
     background-color: #689f38;
 }
 
+/* Estilos para o tooltip */
+.menu-lateral nav ul li {
+    position: relative; /* Necessário para posicionar o tooltip absolutamente */
+}
+
+.menu-lateral nav ul li .tooltip {
+    position: absolute;
+    left: 60px; /* Posiciona o tooltip ao lado do menu recolhido */
+    top: 50%;
+    transform: translateY(-50%); /* Centraliza verticalmente */
+    background-color: #7cb342; /* Cor de fundo do menu */
+    color: white; /* Cor do texto */
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    white-space: nowrap; /* Evita que o texto quebre a linha */
+    z-index: 11; /* Garante que o tooltip fique acima de outros elementos */
+    opacity: 0; /* Inicialmente invisível */
+    visibility: hidden; /* Inicialmente escondido */
+    transition: opacity 0.2s ease, visibility 0.2s ease; /* Transição suave */
+}
+
+/* Garante que o tooltip esteja escondido quando o menu está expandido */
+.menu-lateral:not(.recolhido) nav ul li .tooltip {
+    display: none; /* Oculta o tooltip quando o menu NÃO está recolhido */
+}
+
+/* Exibe o tooltip SOMENTE quando o menu está recolhido e a classe 'show-tooltip' está presente */
+.menu-lateral.recolhido nav ul li.show-tooltip .tooltip {
+    opacity: 1; /* Torna o tooltip visível */
+    visibility: visible; /* Exibe o tooltip */
+}
+
 /* Media Queries para Responsividade */
 @media (max-width: 768px) {
     .container {

@@ -1,3 +1,5 @@
+@import url('style.css');
+
 /* Estilos específicos para o painel */
 
 body {
@@ -174,7 +176,6 @@ body {
     margin-top: 70px; /* Cria espaço abaixo do header fixo */
 }
 
-/* Media Queries para Responsividade */
 
 @media (max-width: 768px) {
     .menu-lateral {
