@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css" integrity="sha512-58P9Hy7II0YeXLv+iFiLCv1rtLW47xmiRpC1oFafeKNShp8V5bKV/ciVtYqbk2YfxXQMt58DjNfkXFOn62xE+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css" integrity="sha512-v8QQ0YQ3H4K6Ic3PJkym91KoeNT5S3PnDKvqnwqFD1oiqIl653crGZplPdU5KKtHjO0QKcQ2aUlQZYjHczkmGw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/solid.min.css" integrity="sha512-DzC7h7+bDlpXPDQsX/0fShhf1dLxXlHuhPBkBo/5wJWRoTU6YL7moeiNoej6q3wh5ti78C57Tu1JwTNlcgHSjg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'login/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'login/css/index.css' %}">
+
+    <title>SiSGECC - Painel</title>
+
+</head>
+
+<body>
+    <div class="painel-container">
+        <aside class="menu-lateral extendido">
+            <div class="logo">
+                <img src="{% static 'login/media/logo-if-branca.png' %}" alt="Instituto Federal Baiano" class="logo-expandido">
+                <img src="{% static 'login/media/logo-if-branca-reduzida.png' %}" alt="Instituto Federal Baiano" class="logo-recolhido">
+                <h1 class="nome-sistema">SiSGECC</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-home"></i>
+                            <span class="menu-texto">Início</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-tasks"></i>
+                            <span class="menu-texto">Processos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'login:logout' %}">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span class="menu-texto">Sair</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="conteudo-principal">
+            <header>
+                <div class="header-esquerda">
+                    <button class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <span class="titulo-sistema">Sistema de Cadastro de GECC</span>
+                </div>
+                <div class="header-direita">
+                    <i class="fas fa-bell"></i>
+                    <i class="fas fa-user-circle"></i>
+                    <span class="nome-usuario">Márcio Alencar</span>
+                </div>
+            </header>
+            <section class="conteudo">
+                <!-- Seu conteúdo principal aqui -->
+                <h1>Bem-vindo!</h1>
+                <p>Este é o painel principal do SiSGECC.</p>
+            </section>
+        </main>
+    </div>
+    <script src="https://kit.fontawesome.com/seu-codigo-font-awesome.js" crossorigin="anonymous"></script>
+    <script src="{% static 'login/js/script.js' %}"></script>
+</body>
+
+</html>

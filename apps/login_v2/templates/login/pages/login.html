@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{% static 'login/css/style.css' %}">
 
     <title>SiSGECC - Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -28,25 +29,17 @@
         </div>
         <div class="right-side">
             <h2>LOGIN</h2>
-            <form method="post">
-                {% csrf_token %}
+            <form action="#">
                 <div class="input-container">
                     <i class="fas fa-user icon"></i>
-                    {{ form.username }}
+                    <input type="text" id="usuario" name="usuario" placeholder="Usuário">
                 </div>
                 <div class="input-container">
                     <i class="fas fa-lock icon"></i>
-                    {{ form.password }}
+                    <input type="password" id="senha" name="senha" placeholder="Senha">
                 </div>
-                {% if form.errors %}
-                    <div class="alert alert-danger">
-                        {% for error in form.non_field_errors %}
-                            {{ error }}
-                        {% endfor %}
-                    </div>
-                {% endif %}
                 <button type="submit">ENTRAR</button>
-            </form>       
+            </form>
         </div>
     </div>
     <script src="https://kit.fontawesome.com/seu-codigo-font-awesome.js" crossorigin="anonymous"></script>
