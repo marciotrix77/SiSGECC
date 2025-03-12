@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'login',
+    'eventos',
 ]
 
 MIDDLEWARE = [
@@ -61,7 +62,10 @@ MEDIA_ROOT = BASE_DIR / 'media'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'apps', 'login', 'templates')], 
+        # 'DIRS': [os.path.join(BASE_DIR, 'apps', 'login', 'templates', 'templates')], 
+        'DIRS': [
+            BASE_DIR / 'base_templates'  
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,6 +131,8 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / "base_statics",
 ]
+
+STATIC_ROOT = BASE_DIR / 'static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

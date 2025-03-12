@@ -1,0 +1,21 @@
+{% include "global/partials/head-master.html" %}
+<title>GECC | {% block title %}{% endblock title %} </title>
+</head>
+
+<body>
+    <div class="painel-container">
+        {% include "global/partials/aside-master.html" %}     
+        <main class="conteudo-principal">
+            {% include "global/partials/header-master.html" %}            
+            <section class="conteudo">
+                {% comment %} Conteúdo do Componente {% endcomment %}
+                {% block conteudo %}{% endblock conteudo %}
+            </section>
+        </main>
+    </div>
+    {% block javascript %}{% endblock javascript %}
+</body>
+
+{% include "global/partials/footer-master.html" %}
+
+</html>

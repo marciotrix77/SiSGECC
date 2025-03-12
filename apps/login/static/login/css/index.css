@@ -176,6 +176,61 @@ body {
     margin-top: 70px; /* Cria espaço abaixo do header fixo */
 }
 
+.conteudo{
+    width: 85vw;
+    border-top: 5px solid #7cb342;
+    background-color: white;
+}
+
+.titulo-sessao-principal {
+    color: #7cb342;
+}
+
+.btn-novo-verde {
+    margin-bottom: 30px;
+    width: 150px;
+    --bs-btn-bg:  #7cb342;
+    --bs-btn-border-color: #7cb342;
+    --bs-btn-hover-border-color: #53851e;   
+    --bs-btn-hover-bg: #53851e;
+    --bs-btn-active-bg: #416b14; 
+    --bs-btn-active-border-color: #416b14; 
+}
+
+
+.table-green-if {
+    --bs-table-color: #fff;
+    --bs-table-bg: #7cb342;
+    --bs-table-border-color: #7cb342;
+    --bs-table-striped-bg: #7cb342;
+    --bs-table-striped-color: #fff;
+    --bs-table-active-bg: #7cb342;
+    --bs-table-active-color: #fff;
+    --bs-table-hover-bg: #7cb342;
+    --bs-table-hover-color: #fff;
+    color: var(--bs-table-color);
+    border-color: var(--bs-table-border-color);
+}
+
+.icone-acao {
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 5px;
+    color: white;
+    border-radius: 3px;
+}
+
+.icone-excluir {
+    background-color: rgb(189, 61, 61);
+}
+
+.icone-editar {
+    background-color: rgb(216, 174, 34);
+}
+
+.icone-consultar {
+    background-color: rgb(53, 130, 231);
+}
 
 @media (max-width: 768px) {
     .menu-lateral {
