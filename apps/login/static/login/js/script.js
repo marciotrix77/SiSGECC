@@ -25,3 +25,10 @@ function showTooltip() {
 function hideTooltip() {
     this.classList.remove('show-tooltip');
 }
+
+const myModal = document.getElementById('exampleModal')
+const myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+})
