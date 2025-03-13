@@ -6,7 +6,7 @@ from login.forms import LoginForm
 
 def login_view(request):
     if request.user.is_authenticated:
-        return redirect('login:index')  # Redireciona para a página index se já estiver autenticado
+        return redirect('eventos:eventos')  # Redireciona para a página index se já estiver autenticado
     
     if request.method == 'POST':
         form = LoginForm(request, data=request.POST) # Use o formulário personalizado
@@ -16,16 +16,12 @@ def login_view(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('login:index') # Redireciona para a página index
+                return redirect('eventos:eventos') # Redireciona para a página index
             else:
                 form.add_error(None, "Usuário ou senha incorretos.")
     else:
         form = LoginForm() # Use o formulário personalizado
     return render(request, 'login/pages/login.html', {'form': form})
-
-@login_required
-def index_view(request):
-    return render(request, 'login/pages/index.html')
 
 def logout_view(request):
     logout(request) # Desloga o usuário

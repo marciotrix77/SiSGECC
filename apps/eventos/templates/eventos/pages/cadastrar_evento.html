@@ -1,0 +1,106 @@
+{% extends "global/pages/master-page.html" %}
+{% load static %}
+
+<title> GECC | {% block title %} Cadasdtro de Eventos {% endblock title %} </title>
+
+
+{% block conteudo %}
+
+<div class="container">
+    <h1>Cadastrar Evento</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="{{ evento_form.nome_evento.id_for_label }}">Nome do Evento:</label>
+            {{ evento_form.nome_evento }}
+            {% if evento_form.nome_evento.errors %}
+                <div class="invalid-feedback">
+                    {% for error in evento_form.nome_evento.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ evento_form.tipo_evento.id_for_label }}">Tipo do Evento:</label>
+            {{ evento_form.tipo_evento }}
+            {% if evento_form.tipo_evento.errors %}
+                <div class="invalid-feedback">
+                    {% for error in evento_form.tipo_evento.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ evento_form.descricao_evento.id_for_label }}">Descrição do Evento:</label>
+            {{ evento_form.descricao_evento }}
+            {% if evento_form.descricao_evento.errors %}
+                <div class="invalid-feedback">
+                    {% for error in evento_form.descricao_evento.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ evento_form.campus_responsavel.id_for_label }}">Campus Responsável:</label>
+            {{ evento_form.campus_responsavel }}
+            {% if evento_form.campus_responsavel.errors %}
+                <div class="invalid-feedback">
+                    {% for error in evento_form.campus_responsavel.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ evento_form.servidor_responsavel.id_for_label }}">Servidor Responsável:</label>
+            {{ evento_form.servidor_responsavel }}
+            {% if evento_form.servidor_responsavel.errors %}
+                <div class="invalid-feedback">
+                    {% for error in evento_form.servidor_responsavel.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ evento_form.data_inicio_evento.id_for_label }}">Data Início do Evento:</label>
+            {{ evento_form.data_inicio_evento }}
+            {% if evento_form.data_inicio_evento.errors %}
+                <div class="invalid-feedback">
+                    {% for error in evento_form.data_inicio_evento.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ evento_form.data_termino_evento.id_for_label }}">Data Término do Evento:</label>
+            {{ evento_form.data_termino_evento }}
+            {% if evento_form.data_termino_evento.errors %}
+                <div class="invalid-feedback">
+                    {% for error in evento_form.data_termino_evento.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+</div>
+
+
+{% endblock conteudo %}
+
+{% block javascript %}
+    <script src="{% static 'login/js/script.js' %}"></script> 
+{% endblock javascript %}
