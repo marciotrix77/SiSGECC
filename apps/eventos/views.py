@@ -9,11 +9,20 @@ def eventos(request):
     return render(request, 'eventos/pages/eventos.html')
 
 
+@login_required
 def cadastrar_evento(request):
     if request.method == 'POST':
         evento_form = EventoForm(request.POST)
         if evento_form.is_valid():
-            evento = evento_form.save()
+            evento = evento_form.save(commit=False)  # Não salva o evento ainda
+            
+            # Obtém o objeto Campus do banco de dados usando o ID fornecido no formulário
+            campus_id = request.POST.get('campus_responsavel')  # Obtém o ID do campus do request
+            campus = Campus.objects.get(pk=campus_id)  # Obtém o objeto Campus do banco de dados
+            
+            evento.campus_responsavel = campus  # Atribui o objeto Campus ao campo campus_responsavel
+            evento.save()  # Agora salva o evento
+            
             return redirect('eventos:adicionar_arquivos', evento_id=evento.id)  # Redireciona para a página de adicionar arquivos
     else:
         evento_form = EventoForm()

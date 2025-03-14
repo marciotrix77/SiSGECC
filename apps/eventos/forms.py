@@ -1,6 +1,7 @@
 from django import forms
 from eventos.models import Evento, Arquivo, TipoEvento 
-from login.models import Campus, User  # Importe os modelos
+from django.contrib.auth.models import User
+from login.models import Campus  # Importe os modelos
 
 class EventoForm(forms.ModelForm):
     nome_evento = forms.CharField(

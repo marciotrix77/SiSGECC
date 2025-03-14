@@ -34,14 +34,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'login',
+    'eventos',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'login',
-    'eventos',
 ]
 
 MIDDLEWARE = [
@@ -62,7 +62,6 @@ MEDIA_ROOT = BASE_DIR / 'media'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # 'DIRS': [os.path.join(BASE_DIR, 'apps', 'login', 'templates', 'templates')], 
         'DIRS': [
             BASE_DIR / 'base_templates'  
         ],
