@@ -2,17 +2,19 @@ from django.db import models
 from django.conf import settings  # Importe as configurações para acessar o modelo User
 
 class TipoEvento(models.Model):
+    objects = models.Manager()  # Add this line to ensure the objects manager is available
     nome = models.CharField(max_length=255, verbose_name="Nome do Tipo de Evento")
 
     def __str__(self):
-        return self.nome
+        return str(self.nome)
 
 class Campus(models.Model):
+    objects = models.Manager()  # Add this line to ensure the objects manager is available
     nome = models.CharField(max_length=255, verbose_name="Nome do Campus")
     sigla = models.CharField(max_length=10, verbose_name="Sigla do Campus", blank=True, null=True)
 
     def __str__(self):
-        return self.nome
+        return str(self.nome)
 
 class Evento(models.Model):
     nome_evento = models.CharField(max_length=255, verbose_name="Nome do Evento")
@@ -28,7 +30,7 @@ class Evento(models.Model):
     data_termino_evento = models.DateField(verbose_name="Data Término do Evento")
 
     def __str__(self):
-        return self.nome_evento
+        return str(self.nome_evento)
     
 class Arquivo(models.Model):
     evento = models.ForeignKey(Evento, on_delete=models.CASCADE, verbose_name="Evento")
@@ -36,4 +38,4 @@ class Arquivo(models.Model):
     nome_original = models.CharField(max_length=255, verbose_name="Nome Original do Arquivo", blank=True, null=True)
 
     def __str__(self):
-        return self.nome_original or self.arquivo.name
+        return str(self.nome_original or self.arquivo.name)
